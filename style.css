@@ -1,0 +1,164 @@
+body {
+    background: url('https://steemitimages.com/DQmUTiyGQvpcEjZuNVsYWaU2yrZ8wuYLevdqwmXTrBtN8BU/step%2010.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding-top: 70px; /* Adjust body padding to account for fixed navbar height */
+}
+.step {
+    margin-bottom: 20px;
+    border: 1px solid #006400; /* Dark green */
+    border-radius: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    position: relative;
+    display: flex;
+    align-items: top;
+    box-shadow: 0 30px 16px rgba(0, 100, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.step-icon {
+    font-size: 2rem;
+    color: #ffd700; /* Gold */ 
+}
+.step-content {
+    margin-left: 20px;
+}
+.step-line {
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    background: #006400; /* Dark green */
+}
+.step-line.vertical {
+    width: 1px;
+    height: 100%;
+}
+.step:nth-child(odd) .step-line {
+    left: -50px;
+}
+.step:nth-child(even) .step-line {
+    right: -50px;
+}
+.step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 20px;
+    background: #006400; /* Dark green */
+}
+.step:nth-child(odd)::after {
+    top: 100%;
+    left: 25px;
+}
+.step:nth-child(even)::after {
+    top: 100%;
+    right: 25px;
+}
+.navbar {
+    background-color: #fff; /* White */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.navbar-brand {
+    color: #ffd700; /* Gold */
+    font-weight: bold;
+    font-size: 1.2rem; /* Decreased font size */
+}
+.navbar-nav .nav-link {
+    color: #006400; /* Dark green */
+    font-size: 1rem; /* Decreased font size */
+    position: relative;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+    border-right: #dfdfdf solid 2px;
+}
+.navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffd700; /* Gold */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+.navbar-nav .nav-link:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.footer {
+    background-color: black; /* Transparent */
+    padding: 10px 0 5px 0;
+    text-align: center;
+    color: #fff;
+}
+h2 {
+    color: #006400; /* Dark green */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Media Queries for responsive padding */
+@media (max-width: 767.98px) {
+    .step {
+        padding: 10px;
+    }
+    .step-content {
+        margin-left: 10px;
+    }
+    .step-line {
+        width: 25px;
+    }
+    .step-line.vertical {
+        height: 50%;
+    }
+    .step:nth-child(odd) .step-line {
+        left: -25px;
+    }
+    .step:nth-child(even) .step-line {
+        right: -25px;
+    }
+    .step:not(:last-child)::after {
+        height: 10px;
+    }
+    .step:nth-child(odd)::after {
+        left: 12.5px;
+    }
+    .step:nth-child(even)::after {
+        right: 12.5px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .step {
+        padding: 15px;
+    }
+    .step-content {
+        margin-left: 15px;
+    }
+    .step-line {
+        width: 35px;
+    }
+    .step-line.vertical {
+        height: 75%;
+    }
+    .step:nth-child(odd) .step-line {
+        left: -35px;
+    }
+    .step:nth-child(even) .step-line {
+        right: -35px;
+    }
+    .step:not(:last-child)::after {
+        height: 15px;
+    }
+    .step:nth-child(odd)::after {
+        left: 17.5px;
+    }
+    .step:nth-child(even)::after {
+        right: 17.5px;
+    }
+}
